@@ -816,6 +816,7 @@ letter-spacing: 0.48px;
 .checkbox:checked + .text-checkbox > .check-text-box {
 background-color: var(--brand-color);
 border: none;
+fill: var(--classic-background-color);
 }
 .text-checkbox {
   display: flex;
@@ -838,6 +839,10 @@ padding-left: 4px;
   border-radius: 2px;
   border: 1px solid var(--LIGHT-SLATE, #8E8F99);
   margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
 }
 .check-text-svg {
 
