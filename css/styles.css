@@ -669,7 +669,7 @@ margin-bottom: 16px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   outline: none;
  color: var(--primary-white-color);
- background-color: var(--footer-color);
+ background-color: transparent;
 font-family: var(--primary-font);
 font-size: 12px;
 line-height: 1.5;
@@ -709,9 +709,11 @@ border-radius: 4px;
 .backdrop {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: #2E2F4266;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
   position: absolute;
@@ -721,25 +723,38 @@ border-radius: 4px;
   border-radius: 4px;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 584px;
+  min-height: 584px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px; 
 }
 .modal-btn {
+  display: flex;
   position: absolute;
   top: 24px;
   right: 24px;
+  width: 24px;
+  height: 24px;
   background-color: #E7E9FC;
   border: 1px solid rgba(0, 0, 0, 0.10);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn-icon {
   fill: var(--footer-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
-.modal-btn:active {
+.modal-btn-icon:focus :hover {
+  fill: var(--primary-white-color);
+}
+.modal-btn:focus :hover{
   background-color: var(--brand-color);
-  border: var(--brand-color);
+  border: none;
 }
 .modal-text {
   color: var(--NAVY-BLUE, #2E2F42);
@@ -747,13 +762,16 @@ text-align: center;
 font-family: var(--primary-font);
 font-size: 16px;
 font-weight: 500;
-line-height: 24px;
-letter-spacing: 0.32px;
-margin-top: 72px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+margin-bottom: 16px;
+}
+.container-modal-form {
+  margin-bottom: 8px;
 }
 .modal-input {
 display: flex;
-width: 360px;
+width: 100%;
 height: 40px;
 flex-shrink: 0;
 flex-direction: column;
@@ -765,7 +783,7 @@ background-color: transparent;
 border-radius: 4px;
 border: 1px solid var(--footer-color);
 outline: transparent;
-
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus{
   border-color: var(--button-color);
@@ -773,32 +791,39 @@ outline: transparent;
 .modal-input:focus + .modal-svg {
   fill: var(--button-color);
 }
-
+.container-textarea {
+  margin-bottom: 16px;
+}
 .modal-textarea {
 resize: none;
-width: 360px;
+width: 100%;
 height: 120px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+color: rgba(46, 47, 66, 0.4); 
+border: 1px solid rgba(46, 47, 66, 0.4);
+border-radius: 4px;
+background-color: transparent;
 flex-shrink: 0;
-padding-left: 16px;
-padding-top: 8px;
+padding: 8px 16px;
+outline: transparent;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .modal-label-text {
   padding: 0;
-  margin-left: 24px;
   color: var(--LIGHT-SLATE, #8E8F99);
 font-family: var(--primary-font);
 font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.48px;
+line-height: 1.17;
+letter-spacing: 0.04em;
 display: block;
-margin-top: 8px;
 margin-bottom: 4px;
 }
 .modal-input::placeholder {
   color: var(--LIGHT-SLATE, #8E8F99);
 font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.48px;
+line-height: 1.17;
+letter-spacing: 0.04em;
 }
 .modal-svg {
   position: absolute;
@@ -806,9 +831,10 @@ letter-spacing: 0.48px;
   fill: var(--footer-color);
   width: 18px;
   height: 24px;
-  left: 50px;
-  top: 20%;
+  left: 16px;
+  top: 50%;
   transform: translate(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .container-modal-svg {
   position: relative;
@@ -817,7 +843,7 @@ letter-spacing: 0.48px;
   display: flex;
   align-items: center;
   margin-top: 16px;
-  margin-left: 24px;
+  margin-bottom: 24px;
 }
 .checkbox:checked + .text-checkbox > .check-text-box {
 background-color: var(--brand-color);
@@ -830,8 +856,8 @@ align-items: center;
 color: var(--LIGHT-SLATE, #8E8F99);
 font-family: var(--primary-font);
 font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.48px;
+line-height: 1.17;
+letter-spacing: 0.04em;
 }
 .color-text-checkbox {
   color: var(--IRIS, #4D5AE5);
