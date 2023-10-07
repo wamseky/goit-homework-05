@@ -759,10 +759,10 @@ border-radius: 4px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .modal-btn-icon:focus {
-fill: var(--primary-white-color);
+fill: #ffffff;
 }
 .modal-btn-icon:hover {
-fill: var(--primary-white-color);
+fill: #ffffff;
 }
 .modal-text {
   color: var(--NAVY-BLUE, #2E2F42);
@@ -881,7 +881,6 @@ padding-left: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-right: 8px;
-  display: flex;
   align-items: center;
   justify-content: center;
   fill: transparent;
