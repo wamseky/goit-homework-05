@@ -754,10 +754,10 @@ border-radius: 4px;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-btn-icon:focus {
+.modal-btn:focus .modal-btn-icon {
   fill: #ffffff;
  }
- .modal-btn-icon:hover {
+ .modal-btn:hover .modal-btn-icon{
   fill: #ffffff;
  }
 .modal-btn-icon {
@@ -860,7 +860,6 @@ border: none;
 fill: var(--classic-background-color);
 }
 .text-checkbox {
-  display: flex;
 align-items: center;
 color: var(--LIGHT-SLATE, #8E8F99);
 font-family: var(--primary-font);
@@ -884,9 +883,6 @@ padding-left: 4px;
   justify-content: center;
   fill: transparent;
   display: inline-flex;
-}
-.check-text-svg {
-
 }
 .modal-form-btn {
   display: block;
